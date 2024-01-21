@@ -1,14 +1,14 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import SearchForm from './src/components/SearchForm';
-
+import {LinearGradient} from 'expo-linear-gradient'
 export default function App() {
   return (
-    <View style={styles.container}>
+    <LinearGradient style={styles.container} colors={['white','#F2BE22']}>
       <SafeAreaView>
 
       <SearchForm />
       </SafeAreaView>
-    </View>
+    </LinearGradient>
   );
 }
 
