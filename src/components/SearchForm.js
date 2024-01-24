@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { FontAwesome } from '@expo/vector-icons';
 
-const SearchForm = () => {
+const SearchForm = ({onSearch}) => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [departDate, setDepartDate] = useState(new Date());
   const [returnDate, setReturnDate] = useState(new Date());
 
-  const onSearch = () => {
-    console.log("Tıklandı");
+  const handleOnSearch = () => {
+    onSearch({from,to,departDate,returnDate})
   };
   return (
     <View style={styles.card}>
@@ -44,7 +44,7 @@ const SearchForm = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <Button title="Search" onPress={onSearch} color={"white"} />
+        <Button title="Search" onPress={handleOnSearch} color={"white"} />
       </View>
     </View>
   );
