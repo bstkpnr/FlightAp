@@ -1,0 +1,153 @@
+const stories = [
+  {
+    id: 1,
+    username: "Sale",
+    title: "Albums",
+    profile: require("../../../assets/fly1.jpg"),
+    stories: [
+      {
+        id: 1,
+        url: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=1515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 3,
+        isReadMore: true,
+        storyId: 1,
+        isSeen: false,
+      },
+      {
+        id: 2,
+        url: "https://plus.unsplash.com/premium_photo-1679830513876-999c0189be26?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 4,
+        isReadMore: true,
+        storyId: 1,
+        isSeen: false,
+      },
+      {
+        id: 3,
+        url: "https://images.unsplash.com/photo-1600586363978-e520de02cdaa?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 15,
+        isReadMore: true,
+        storyId: 1,
+        isSeen: false,
+      },
+    ],
+  },
+  {
+    id: 2,
+    username: "Abroad",
+    profile: require("../../../assets/fly2.jpg"),
+    title: "Album Launch",
+    stories: [
+      {
+        id: 0,
+        url: "https://images.unsplash.com/photo-1564730072969-84a1d8087f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 5,
+        isReadMore: true,
+        storyId: 2,
+        isSeen: false,
+      },
+      {
+        id: 1,
+        url: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 10,
+        isReadMore: true,
+        storyId: 2,
+        isSeen: false,
+      },
+    ],
+  },
+  {
+    id: 3,
+    username: "SuitCase",
+    profile: require("../../../assets/fly3.jpg"),
+    title: "Albums",
+    stories: [
+      {
+        id: 0,
+        url: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=1515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 5,
+        isReadMore: true,
+        storyId: 3,
+        isSeen: false,
+      },
+      {
+        id: 1,
+        url: "https://images.unsplash.com/photo-1564730072969-84a1d8087f39?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 10,
+        isReadMore: true,
+        storyId: 3,
+        isSeen: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    username: "FLY",
+    profile: require("../../../assets/fly4.jpg"),
+
+    title: "Albums",
+    stories: [
+      {
+        id: 0,
+        url: "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 5,
+        isReadMore: true,
+        storyId: 4,
+        isSeen: false,
+      },
+      {
+        id: 1,
+        url: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 10,
+        isReadMore: true,
+        storyId: 4,
+        isSeen: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    username: "FLY",
+    profile: require("../../../assets/fly5.png"),
+    title: "Single Album",
+    stories: [
+      {
+        id: 0,
+        url: "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 5,
+        isReadMore: true,
+        storyId: 4,
+        isSeen: false,
+      },
+    ],
+  },
+  {
+    id: 6,
+    username: "FLY ",
+    profile: require("../../../assets/fly1.jpg"),
+
+    title: "Single Album",
+    stories: [
+      {
+        id: 0,
+        url: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=1515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        type: "image",
+        duration: 5,
+        isReadMore: true,
+        storyId: 4,
+        isSeen: false,
+      },
+    ],
+  },
+];
+
+export default stories;
