@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, View, Image, TouchableOpacity, Text,StyleSheet } from 'react-native';
 import StoryCarousel from './StoryCarousel';
-
+import {Video,ResizeMode} from 'expo-av'
 
 const StoryViewer = ({ story, visible, onClose }) => {
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
@@ -34,8 +34,17 @@ const StoryViewer = ({ story, visible, onClose }) => {
     switch (currentStoryItem.type) {
         case 'image':
           return <Image source={{ uri: currentStoryItem.url }} style={styles.media} />;
-        default:
-          return null;
+          case 'video':
+            return (
+              <Video 
+                source={{ uri: currentStoryItem.url }}   
+                style={styles.media}
+                resizeMode={ResizeMode.STRETCH}
+                shouldPlay
+              />
+            );
+          default:
+            return null;
       }
   };
 

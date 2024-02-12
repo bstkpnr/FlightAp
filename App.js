@@ -18,10 +18,23 @@ const option1 = data[1];
 export default function App() {
   const [items, setItems] = useState([]);
 
-  const onSearch = (data) => {
-    console.log(data);
+  const onSearch = (searchData) => {
+    console.log(searchData);
+    const { from, to, departDate, returnDate } = searchData;
 
-    setItems(data);
+    const formatDepartedDate=departDate.toISOString().split('T')[0];
+    const formatReturnDate=returnDate.toISOString().split('T')[0];
+
+    const filterData=searchData.filter(item =>{
+      const departDateMatch=item.from.departAt.split('T')[0] === formatDepartedDate;
+      const returnDateMatch=item.to.arriveAt.split('T')[0] === formatReturnDate;
+      const fromMatch=item.from.airportCode===from;
+      const toMatch=item.to.airportCode===to;
+
+      return departDateMatch && returnDateMatch && fromMatch && toMatch;
+    })
+
+    setItems(filterData);
   };
   const [isViewerVisible, setIsViewerVisible] = useState(false);
   const [selectedStory, setSelectedStory] = useState(null);
