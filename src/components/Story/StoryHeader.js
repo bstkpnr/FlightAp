@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
 
     container: {
         flexDirection: 'row',
-        paddingVertical: 10,
-        paddingHorizontal: 5,
+        paddingVertical: 15,
+        paddingHorizontal: 15,
+top:16        
       },
       storyWrapper: {
         alignItems: 'center',

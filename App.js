@@ -14,6 +14,9 @@ import { useState } from "react";
 import StoryView from "./src/components/Story/StoryView";
 import stories from "./src/components/Story/data";
 import StoryHeader from "./src/components/Story/StoryHeader";
+import { FlashList } from "@shopify/flash-list";
+
+
 const option1 = data[1];
 export default function App() {
   const [items, setItems] = useState([]);
@@ -48,7 +51,8 @@ export default function App() {
   };
   return (
     <LinearGradient style={styles.container} colors={["white", "#F2BE22"]}>
-      <SafeAreaView>
+      <ScrollView style={{flex:1}}>
+
         <StoryHeader stories={stories} onStoryPress={handleStoryPress} />
         <StoryView
           story={selectedStory}
@@ -56,12 +60,14 @@ export default function App() {
           onClose={closeViewer}
         />
         <SearchForm onSearch={onSearch} />
-        <FlatList
+        <FlashList 
           data={data}
           renderItem={({ item }) => <FlighOptionItem flight={item} />}
-          showsVerticalScrollIndicator={false}
+
+          estimatedItemSize={200}
         />
-      </SafeAreaView>
+              </ScrollView>
+
     </LinearGradient>
   );
 }
@@ -71,4 +77,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+
 });
