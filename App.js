@@ -62,13 +62,14 @@ export default function App() {
           onClose={closeViewer}
         />
         <SearchForm onSearch={onSearch} />
-        <FlatList 
+        <FlashList 
           data={data}
           renderItem={({ item }) => <FlighOptionItem flight={item} />}
+          estimatedItemSize={200}
           onLayout={() => {
             const renderEndTime = performance.now(); 
             const renderDuration = renderEndTime - renderStartTime.current;
-            console.log(`FlatList render time: ${renderDuration} ms`);
+            console.log(`FlashList render time: ${renderDuration} ms`);
           }}
         />
         
