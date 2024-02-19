@@ -10,7 +10,7 @@ import SearchForm from "./src/components/SearchForm";
 import { LinearGradient } from "expo-linear-gradient";
 import data from "./data.json";
 import FlighOptionItem from "./src/components/FlighOptionItem";
-import { useState } from "react";
+import { useState ,useRef,useEffect} from "react";
 import StoryView from "./src/components/Story/StoryView";
 import stories from "./src/components/Story/data";
 import StoryHeader from "./src/components/Story/StoryHeader";
@@ -49,9 +49,11 @@ export default function App() {
     setIsViewerVisible(false);
     setSelectedStory(null);
   };
+  const renderStartTime = useRef(performance.now());
+
+
   return (
     <LinearGradient style={styles.container} colors={["white", "#F2BE22"]}>
-      <ScrollView style={{flex:1}}>
 
         <StoryHeader stories={stories} onStoryPress={handleStoryPress} />
         <StoryView
@@ -60,15 +62,22 @@ export default function App() {
           onClose={closeViewer}
         />
         <SearchForm onSearch={onSearch} />
-        <FlashList 
+        <FlatList 
           data={data}
           renderItem={({ item }) => <FlighOptionItem flight={item} />}
-
-          estimatedItemSize={200}
+          onLayout={() => {
+            const renderEndTime = performance.now(); 
+            const renderDuration = renderEndTime - renderStartTime.current;
+            console.log(`FlatList render time: ${renderDuration} ms`);
+          }}
         />
-              </ScrollView>
+        
 
     </LinearGradient>
+
+
+
+
   );
 }
 
